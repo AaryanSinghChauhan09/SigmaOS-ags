@@ -1,0 +1,8 @@
+[package]
+name = "sigmaos_ags"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "sigmaos_ags"
+path = "src/lib.rs"
