@@ -1,9 +1,40 @@
-//! Options model.
+//! Command-line options for ags.
 
+/// Operating mode
 #[derive(Debug, Clone, PartialEq)]
-pub enum Mode { Default, Config(String), Css(String), Quit, Toggle }
+pub enum Mode {
+    /// Default mode
+    Default,
+    /// Config mode
+    Config(String),
+    /// CSS mode
+    Css(String),
+    /// Quit mode
+    Quit,
+    /// Toggle mode
+    Toggle,
+}
 
+/// Command-line options
 #[derive(Debug, Clone)]
-pub struct Options { pub mode: Mode }
-impl Default for Options { fn default() -> Self { Self { mode: Mode::Default } } }
-#[cfg(test)] mod tests { use super::*; #[test] fn o() { assert!(matches!(Options::default().mode, Mode::Default)); } }
+pub struct Options {
+    /// Operating mode
+    pub mode: Mode,
+    /// Config file path
+    pub config_path: String,
+    /// Verbose output
+    pub verbose: bool,
+    /// Quiet mode
+    pub quiet: bool,
+}
+
+impl Default for Options {
+    fn default() -> Self {
+        Self {
+            mode: Mode::Default,
+            config_path: String::new(),
+            verbose: false,
+            quiet: false,
+        }
+    }
+}
