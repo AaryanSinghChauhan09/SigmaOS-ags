@@ -1,8 +1,15 @@
 [package]
-name = "sigmaos_ags"
+name = "SigmaOS-ags"
 version = "0.1.0"
 edition = "2021"
+license = "Apache-2.0"
+description = "SigmaOS sigmaos_ags component"
 
 [lib]
 name = "sigmaos_ags"
 path = "src/lib.rs"
+
+[dependencies]
+thiserror = "1"
+
+[dev-dependencies]
